@@ -3,192 +3,307 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f7f4">
-  <meta name="description" content="Portfólio de Mateus Heleno, estudante de Ciência da Computação na UFOP. Projetos em transformação digital, inteligência artificial e otimização logística.">
-  <meta property="og:title" content="Mateus Heleno — Portfólio">
-  <meta property="og:description" content="Tecnologia, transformação digital, IA e otimização aplicadas a problemas reais.">
+  <meta name="theme-color" content="#f6f6f5">
+  <meta name="description" content="Portfólio de Mateus Heleno. Transformação digital, desenvolvimento com IA e pesquisa em otimização de rotas na UFOP.">
+  <meta property="og:title" content="Mateus Heleno | Tecnologia aplicada a problemas reais">
+  <meta property="og:description" content="Projetos de transformação digital, inteligência artificial e otimização logística.">
   <meta property="og:type" content="website">
-  <title>Mateus Heleno — Portfólio</title>
+  <meta property="og:url" content="https://mateusheleno.github.io/">
+  <link rel="icon" href="mateus-heleno-icone-mh-preto.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Mateus Heleno | Portfólio</title>
   <style>
-    :root { --bg: #f7f7f4; --paper: #fff; --ink: #181a1a; --muted: #5d6361; --stroke: #dcdfd9; --tint: #e9ece7; --max: 1120px; }
+    :root {
+      --background: #f6f6f5;
+      --foreground: #151617;
+      --surface: #ffffff;
+      --surface-alt: #ededeb;
+      --muted-foreground: #565b61;
+      --border: #d8dadd;
+      --primary: #151617;
+      --primary-foreground: #ffffff;
+      --dark-surface: #171819;
+      --light-ink: #f9f9f7;
+      --ring: #5e6671;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --max-width: 1160px;
+      --font-body: 'DM Sans', 'Trebuchet MS', sans-serif;
+      --font-detail: 'IBM Plex Mono', Consolas, monospace;
+    }
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; color: var(--ink); background: var(--bg); font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    body { margin: 0; min-width: 320px; background: var(--background); color: var(--foreground); font: 400 16px/1.65 var(--font-body); -webkit-font-smoothing: antialiased; }
+    body::selection { background: #cfd2d6; color: #111; }
     a { color: inherit; text-decoration: none; }
-    a:focus-visible, button:focus-visible { outline: 3px solid #8da9a0; outline-offset: 4px; }
-    .wrap { width: min(calc(100% - 48px), var(--max)); margin: 0 auto; }
-    .site-header { border-bottom: 1px solid var(--stroke); background: rgba(247,247,244,.94); }
-    .header-inner { min-height: 92px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -.035em; font-size: 1.05rem; white-space: nowrap; }
-    .brand-mark { display: inline-grid; place-items: center; width: 42px; height: 42px; background: var(--ink); color: white; border-radius: 12px; font-weight: 850; font-size: .93rem; letter-spacing: -.08em; }
-    .nav { display: flex; align-items: center; gap: 28px; font-size: .92rem; font-weight: 600; color: #454b49; }
-    .nav a:hover, .plain-link:hover { text-decoration: underline; text-underline-offset: 5px; }
-    .hero { display: grid; grid-template-columns: 1.28fr .72fr; align-items: center; gap: 60px; padding: 92px 0 110px; }
-    .eyebrow { display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: .15em; font-size: .73rem; font-weight: 800; color: #565e59; }
-    .eyebrow::before { content:""; width: 30px; height: 1px; background: var(--ink); }
-    h1 { max-width: 760px; margin: 28px 0 26px; font-size: clamp(3rem, 5.8vw, 5.2rem); line-height: 1.065; letter-spacing: -.069em; font-weight: 820; }
-    h1 span { color: #858c87; }
-    .hero-copy { max-width: 640px; font-size: clamp(1.05rem, 1.7vw, 1.22rem); color: #555c58; margin: 0; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
-    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 12px; padding: 14px 21px; border-radius: 12px; border: 1px solid var(--ink); font-size: .94rem; font-weight: 750; transition: transform .15s ease, background .15s ease; }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { color: white; background: var(--ink); }
-    .btn-outline { background: transparent; }
-    .hero-visual { position: relative; min-height: 410px; background: #e9ece6; border: 1px solid var(--stroke); border-radius: 26px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    .orbit { border: 1px solid #bfc6bf; width: 325px; height: 325px; border-radius: 50%; display: grid; place-items: center; }
-    .orbit::before { content: ""; position: absolute; width: 242px; height: 242px; border: 1px solid #aeb6ae; border-radius: 50%; }
-    .orbit::after { content: ""; position: absolute; width: 150px; height: 150px; border: 1px solid #9aa69b; border-radius: 50%; }
-    .monogram { z-index: 1; font-size: clamp(4rem, 8vw, 6.5rem); font-weight: 820; letter-spacing: -.15em; margin-right: .13em; }
-    .visual-tag { position:absolute; bottom: 18px; left: 18px; right: 18px; display:flex; justify-content:space-between; gap:8px; color: #505951; text-transform: uppercase; letter-spacing: .09em; font-size:.68rem; font-weight:800; }
-    .visual-dot { position: absolute; border-radius: 50%; background: #181a1a; width: 14px; height:14px; right: 43px; top: 54px; }
-    .section { padding: 78px 0; border-top: 1px solid var(--stroke); }
-    .section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; margin-bottom: 30px; }
-    .section-num { font-size: .76rem; letter-spacing: .14em; color: #737b76; font-weight: 800; }
-    h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); line-height: 1.15; letter-spacing: -.045em; margin: 0; }
-    .about-grid { display: grid; grid-template-columns: 1.45fr .55fr; gap: 60px; align-items:start; }
-    .about-text p { font-size: 1.08rem; color: #4a524d; margin:0 0 17px; max-width: 690px; }
-    .about-facts { border-left: 1px solid var(--stroke); padding-left: 28px; }
-    .fact { margin: 0 0 25px; }
-    .fact-label { font-size: .72rem; font-weight: 800; color: #777e78; text-transform: uppercase; letter-spacing: .13em; }
-    .fact-value { font-weight: 750; margin: 6px 0 0; font-size: 1rem; }
-    .project-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-    .project { background:var(--paper); border: 1px solid var(--stroke); border-radius: 19px; padding: 32px; display: flex; flex-direction: column; min-height: 420px; }
-    .project-top { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:52px; }
-    .project-number { font-size:.75rem; color:#858d86; letter-spacing:.12em; font-weight:800; }
-    .pill { background:#edf0ea; color:#475247; font-size:.73rem; border-radius:30px; padding:6px 11px; font-weight:750; white-space:nowrap; }
-    .project h3 { font-size:clamp(1.5rem, 2.5vw, 2rem); line-height:1.18; letter-spacing:-.045em; margin:0 0 18px; }
-    .project p { color:#565e59; font-size:.97rem; margin:0 0 22px; }
-    .project .note { font-size:.83rem; color:#787e79; margin-top:auto; border-top:1px solid var(--stroke); padding-top:18px; }
-    .project.project-compact { min-height: 325px; }
-    .project.project-compact .project-top { margin-bottom: 34px; }
-    .project-link { color:var(--ink); display:inline-flex; align-items:center; width:max-content; max-width:100%; gap:8px; font-weight:750; font-size:.91rem; text-underline-offset:4px; text-decoration:underline; margin:0 0 18px; }
-    .project-link:hover { color:#626d66; }
-    .section-intro { max-width: 650px; color:var(--muted); margin: -10px 0 28px; font-size: .98rem; }
-    .tag-row { display:flex; gap:8px; flex-wrap:wrap; margin: 0 0 23px; }
-    .tag { border:1px solid var(--stroke); color:#49534c; padding:5px 10px; border-radius:7px; font-size:.75rem; font-weight:700; }
-    .skills { display: grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-    .skill-box { border-top:2px solid var(--ink); padding-top:18px; }
-    .skill-box h3 { font-size:.96rem; margin:0 0 12px; }
-    .skill-box p { color:#555e57; margin:0; font-size:.95rem; }
-    .contact-panel { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; padding:38px; border-radius:20px; background:#171a19; color:white; }
-    .contact-panel h2 { max-width:600px; margin:0 0 10px; font-size:clamp(1.65rem,3vw,2.4rem); }
-    .contact-panel p { color:#c3c9c4; margin:0; max-width:580px; }
-    .contact-panel .btn { background:white; color:#171a19; border-color:white; }
-    .footer { display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; padding:32px 0 38px; font-size:.84rem; color:#717872; }
-    .footer-links { display:flex; gap:22px; }
-    @media (max-width: 890px) { .hero { grid-template-columns:1fr; gap:40px; padding:66px 0 75px; } .hero-visual { min-height:310px; } .orbit { width:250px;height:250px; } .orbit::before {width:190px;height:190px;} .orbit::after {width:115px;height:115px;} .about-grid { gap:28px; grid-template-columns:1fr; } .about-facts { border-left:0; padding-left:0; display:grid; grid-template-columns:1fr 1fr; gap:16px; } .project-grid {grid-template-columns:1fr;} .project { min-height:unset; } .project-top {margin-bottom:36px;} }
-    @media (max-width: 620px) { .wrap { width:min(calc(100% - 34px), var(--max)); } .header-inner {min-height:82px; align-items:flex-start; padding:16px 0; flex-direction:column; gap:12px;} .nav {gap:18px; flex-wrap:wrap; font-size:.83rem;} .hero {padding-top:54px;} h1 {font-size:clamp(2.8rem, 12vw, 4.6rem);} .hero-visual {min-height:275px;} .section {padding:58px 0;} .skills {grid-template-columns:1fr; gap:29px;} .about-facts {grid-template-columns:1fr 1fr;} .project {padding:25px;} .contact-panel {padding:27px;} .footer-links {gap:16px;} }
-    @media (prefers-reduced-motion:reduce) { html {scroll-behavior:auto;} .btn {transition:none;} }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--ring); outline-offset: 4px; }
+    img { max-width: 100%; display: block; }
+    svg { max-width: 100%; }
+    .container { width: min(calc(100% - 48px), var(--max-width)); margin-inline: auto; }
+    .skip-link { position: absolute; top: -100px; left: 24px; z-index: 99; background: white; padding: 10px 14px; border-radius: 8px; }
+    .skip-link:focus { top: 12px; }
+    .site-header { position: relative; z-index: 10; background: var(--background); border-bottom: 1px solid var(--border); }
+    .header-row { height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { display: inline-flex; align-items: center; gap: 13px; font-weight: 800; letter-spacing: -.035em; font-size: 1.03rem; white-space: nowrap; }
+    .brand img { width: 48px; height: 36px; object-fit: contain; }
+    .nav { display: flex; align-items: center; gap: clamp(15px, 2.8vw, 34px); }
+    .nav a { color: #34373b; font-size: .89rem; font-weight: 700; border-bottom: 2px solid transparent; padding-block: 9px; }
+    .nav a:hover { border-color: #151617; }
+    .nav .nav-external { padding: 9px 15px; border-radius: var(--radius-sm); background: #fff; border: 1px solid var(--border); }
+    .nav .nav-external:hover { border-color: #5f646b; }
+    .hero { padding-block: 34px 48px; }
+    .hero-shell { background: var(--dark-surface); border-radius: 26px; overflow: hidden; color: var(--light-ink); display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); min-height: 545px; position: relative; }
+    .hero-content { padding: clamp(38px, 6vw, 76px) 0 clamp(38px, 6vw, 70px) clamp(36px, 5.6vw, 68px); display: flex; flex-direction: column; align-items: flex-start; position: relative; z-index: 2; }
+    .hero-topline { font-size: .79rem; font-weight: 600; color: #c2c6cb; margin: 0 0 32px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 640px; font-size: clamp(3.1rem, 5.6vw, 5.75rem); line-height: 1.045; letter-spacing: -.065em; font-weight: 700; margin-bottom: 28px; text-wrap: balance; }
+    .hero-lead { font-size: clamp(1rem, 1.5vw, 1.13rem); max-width: 500px; line-height: 1.68; color: #c8cbd0; margin-bottom: 34px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 47px; padding: 11px 19px; border: 1px solid transparent; border-radius: 10px; font-size: .9rem; font-weight: 700; line-height: 1.25; }
+    .button-light { background: #fafafa; color: var(--foreground); }
+    .button-light:hover { background: #e5e7e9; }
+    .button-darkline { border-color: #6a6c70; color: #f2f3f4; }
+    .button-darkline:hover { background: #2b2e31; }
+    .hero-art { position: relative; display: flex; align-items: center; justify-content: center; padding: 65px 30px 62px 0; isolation: isolate; }
+    .hero-art::before { content: ''; width: 74%; aspect-ratio: 1; border-radius: 50%; position: absolute; border: 1px solid #414448; box-shadow: 0 0 0 65px #1d1f20, 0 0 0 66px #333639; z-index: -2; }
+    .network { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .54; z-index: -1; }
+    .hero-symbol { width: min(100%, 390px); height: auto; filter: drop-shadow(0 18px 32px rgba(0,0,0,.15)); }
+    .hero-caption { position: absolute; right: 32px; bottom: 25px; color: #a4aab0; font: 500 .68rem/1.4 var(--font-detail); }
+    .intro { display: grid; grid-template-columns: .43fr 1fr; gap: clamp(36px,7vw,110px); padding: 82px 0 92px; }
+    .section-kicker { display: block; color: #5d6369; font: 500 .78rem/1.5 var(--font-detail); margin-bottom: 18px; }
+    .intro h2 { font-size: clamp(1.8rem, 2.8vw, 2.55rem); letter-spacing: -.048em; line-height: 1.17; }
+    .intro-copy { max-width: 710px; }
+    .intro-copy p { color: #42484e; font-size: 1.06rem; line-height: 1.78; margin-bottom: 17px; }
+    .intro-copy p:last-child { margin-bottom: 0; }
+    .intro-highlight { margin-top: 29px; padding: 20px 24px; border-left: 3px solid var(--foreground); background: var(--surface-alt); font-weight: 650; line-height: 1.6; }
+    .section { padding: 85px 0 90px; border-top: 1px solid var(--border); }
+    .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+    .section-head h2 { font-size: clamp(2rem, 3.5vw, 3.1rem); letter-spacing: -.06em; line-height: 1.12; margin-bottom: 0; }
+    .section-head p { max-width: 325px; text-align: right; font-size: .91rem; color: var(--muted-foreground); margin: 0; }
+    .feature-grid { display: grid; grid-template-columns: 1.13fr .87fr; gap: 18px; }
+    .feature { border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); padding: clamp(26px,3.4vw,42px); display: flex; flex-direction: column; min-height: 522px; overflow: hidden; }
+    .feature-primary { background: #eaecea; }
+    .feature-secondary { background: #fdfdfc; }
+    .project-meta { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 46px; }
+    .meta-type { font-size: .85rem; font-weight: 750; }
+    .status { font: 500 .75rem/1.2 var(--font-detail); border: 1px solid #c4c8cb; border-radius: 100px; padding: 7px 10px; white-space: nowrap; }
+    .feature h3 { font-size: clamp(1.85rem, 3.1vw, 2.7rem); line-height: 1.17; letter-spacing: -.053em; max-width: 500px; margin-bottom: 18px; }
+    .feature > p { color: #454b51; font-size: .99rem; line-height: 1.75; max-width: 550px; margin-bottom: 20px; }
+    .feature .bottom { margin-top: auto; }
+    .delivery-list { list-style: none; padding: 0; margin: 19px 0 25px; border-top: 1px solid #cfd2cf; }
+    .delivery-list li { padding: 9px 0; border-bottom: 1px solid #cfd2cf; display: flex; justify-content: space-between; align-items: baseline; gap: 18px; font-size: .86rem; }
+    .delivery-list li span { font-size: .74rem; color: #535b60; text-align: right; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { font-size: .76rem; font-weight: 650; padding: 6px 11px; background: #fff; border: 1px solid #d2d5d7; border-radius: 7px; }
+    .feature-secondary .tag { background: #f3f3f2; }
+    .route-graphic { height: 104px; margin: 0 0 24px; border: 1px solid #e2e3e2; background: linear-gradient(90deg, transparent 24.8%, #e7e8e8 25%, transparent 25.2%, transparent 49.8%, #e7e8e8 50%, transparent 50.2%, transparent 74.8%, #e7e8e8 75%, transparent 75.2%); border-radius: 10px; }
+    .route-graphic svg { width: 100%; height: 100%; }
+    .research-note { font-size: .76rem; color: #697079; margin: 3px 0 22px; }
+    .small-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+    .small-project { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px 30px; display: flex; gap: 20px; justify-content: space-between; min-height: 218px; }
+    .small-project h3 { font-size: 1.33rem; letter-spacing: -.037em; line-height: 1.25; margin: 7px 0 11px; }
+    .small-project p { font-size: .89rem; line-height: 1.64; color: var(--muted-foreground); max-width: 370px; margin-bottom: 18px; }
+    .small-project .small-label { font: 500 .74rem var(--font-detail); color: #666d74; }
+    .project-link { display: inline-block; font-size: .86rem; font-weight: 750; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+    .project-link:hover { color: #5f666d; }
+    .project-stamp { min-width: 72px; height: 72px; border-radius: 13px; background: #ebedec; display: flex; align-items: center; justify-content: center; font: 600 1.7rem/1 var(--font-detail); letter-spacing: -.08em; }
+    .project-stamp.links { font-family: var(--font-body); font-weight: 800; font-size: 2.6rem; }
+    .skills-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .skill-area { padding: 24px 0 0; border-top: 3px solid #1c1d1e; }
+    .skill-area h3 { font-size: 1.01rem; margin-bottom: 15px; }
+    .skill-area p { max-width: 300px; font-size: .96rem; line-height: 1.7; color: var(--muted-foreground); }
+    .skill-footnote { margin: 18px 0 0; font-size: .84rem; color: #6a7075; }
+    .contact { margin-bottom: 42px; border-radius: var(--radius-lg); background: #191b1d; color: #fff; padding: clamp(32px, 5vw, 58px); display: grid; grid-template-columns: 1fr .8fr; align-items: center; gap: 35px; }
+    .contact .section-kicker { color: #aeb3b9; }
+    .contact h2 { font-size: clamp(2.1rem, 4vw, 3.4rem); line-height: 1.13; letter-spacing: -.055em; max-width: 520px; margin-bottom: 20px; }
+    .contact p { color: #c5c9cc; max-width: 470px; margin-bottom: 0; }
+    .contact-right { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+    .contact-right img { width: min(100%, 325px); height: auto; }
+    .contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding: 0 0 36px; font-size: .83rem; color: #60666d; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    section[id] { scroll-margin-top: 20px; }
+    @media (max-width: 930px) {
+      .hero-shell { grid-template-columns: 1fr; }
+      .hero-content { padding: 53px 46px 25px; }
+      .hero-art { min-height: 320px; padding: 0 42px 42px; }
+      .hero-art::before { width: 44%; }
+      .hero-symbol { width: 300px; }
+      .intro { grid-template-columns: 1fr; gap: 18px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .feature { min-height: unset; }
+      .project-meta { margin-bottom: 28px; }
+      .contact { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 650px) {
+      .container { width: min(calc(100% - 30px), var(--max-width)); }
+      .header-row { height: auto; padding: 15px 0 12px; align-items: flex-start; flex-direction: column; gap: 9px; }
+      .brand { font-size: 1rem; }
+      .brand img { width: 41px; height: 32px; }
+      .nav { width: 100%; gap: 17px; overflow-x: auto; white-space: nowrap; padding-bottom: 3px; }
+      .nav a { font-size: .8rem; }
+      .nav .nav-external { padding: 6px 10px; }
+      .hero { padding-block: 16px 24px; }
+      .hero-shell { border-radius: 17px; }
+      .hero-content { padding: 39px 28px 12px; }
+      .hero-topline { margin-bottom: 27px; }
+      h1 { font-size: clamp(2.7rem, 11vw, 4.4rem); }
+      .hero-lead { font-size: 1rem; }
+      .hero-art { min-height: 235px; padding: 5px 20px 32px; }
+      .hero-art::before { width: 52%; box-shadow: 0 0 0 40px #1d1f20, 0 0 0 41px #333639; }
+      .hero-symbol { max-width: 225px; }
+      .hero-caption { right: 18px; bottom: 15px; font-size: .6rem; }
+      .intro { padding-block: 53px 57px; }
+      .section { padding: 61px 0 69px; }
+      .section-head { display: block; }
+      .section-head p { text-align: left; max-width: 440px; margin-top: 15px; }
+      .feature { padding: 24px; border-radius: 16px; }
+      .feature h3 { font-size: 2rem; }
+      .feature > p { font-size: .94rem; }
+      .small-projects, .skills-row { grid-template-columns: 1fr; }
+      .small-project { padding: 24px; min-height: 0; }
+      .project-stamp { min-width: 56px; height: 56px; font-size: 1.22rem; }
+      .skill-area { padding-top: 18px; }
+      .contact { padding: 34px 27px; gap: 30px; }
+      .contact-right img { max-width: 240px; }
+      .footer-links { gap: 15px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="#inicio" aria-label="Ir ao início"><span class="brand-mark">MH</span><span>Mateus Heleno</span></a>
+    <div class="container header-row">
+      <a class="brand" href="#inicio" aria-label="Mateus Heleno — voltar ao início"><img src="mateus-heleno-icone-mh-preto.svg" alt="" width="48" height="36"><span>Mateus Heleno</span></a>
       <nav class="nav" aria-label="Navegação principal">
         <a href="#sobre">Sobre</a>
         <a href="#projetos">Projetos</a>
         <a href="#conhecimentos">Conhecimentos</a>
         <a href="#contato">Contato</a>
+        <a class="nav-external" href="https://github.com/MateusHeleno" target="_blank" rel="noopener noreferrer">GitHub</a>
       </nav>
     </div>
   </header>
-  <main id="inicio">
-    <section class="wrap hero" aria-labelledby="titulo-principal">
-      <div>
-        <div class="eyebrow">Ciência da Computação · UFOP</div>
-        <h1 id="titulo-principal">Tecnologia para <span>resolver problemas reais.</span></h1>
-        <p class="hero-copy">Sou Mateus Heleno. Tenho interesse em inteligência artificial, desenvolvimento de soluções e otimização, com foco especial em operações e logística.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#projetos">Conhecer projetos <span aria-hidden="true">↗</span></a>
-          <a class="btn btn-outline" href="https://github.com/MateusHeleno" target="_blank" rel="noopener noreferrer">Meu GitHub <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-      <div class="hero-visual" aria-label="Monograma MH em composição abstrata">
-        <div class="orbit"><span class="monogram">MH</span></div><span class="visual-dot" aria-hidden="true"></span>
-        <div class="visual-tag"><span>Curiosidade & método</span><span>2026</span></div>
-      </div>
-    </section>
-    <section id="sobre" class="section">
-      <div class="wrap">
-        <div class="section-head"><h2>Sobre mim</h2><span class="section-num">01 / 04</span></div>
-        <div class="about-grid">
-          <div class="about-text">
-            <p>Sou graduando em Ciência da Computação pela Universidade Federal de Ouro Preto (UFOP), com conclusão prevista para dezembro de 2028.</p>
-            <p>Na Cener Imóveis, conduzo iniciativas de transformação digital, envolvendo um sistema de gestão interno, a organização de processos e o planejamento da presença digital da empresa. Utilizo ferramentas de IA generativa para transformar necessidades do negócio em soluções concretas.</p>
-            <p>Também participo de uma iniciação científica em otimização de rotas de veículos elétricos, estudando metaheurísticas para buscar soluções de melhor qualidade em problemas logísticos.</p>
+  <main id="conteudo">
+    <section class="hero container" id="inicio" aria-labelledby="principal">
+      <div class="hero-shell">
+        <div class="hero-content">
+          <p class="hero-topline">Ciência da Computação na UFOP</p>
+          <h1 id="principal">Tecnologia que sai do papel.</h1>
+          <p class="hero-lead">Sou Mateus Heleno. Conecto desenvolvimento, inteligência artificial e otimização para transformar necessidades reais em soluções.</p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#projetos">Conhecer meus projetos</a>
+            <a class="button button-darkline" href="https://www.linkedin.com/in/mateus-heleno-aa367b350/" target="_blank" rel="noopener noreferrer">Ver LinkedIn</a>
           </div>
-          <aside class="about-facts" aria-label="Informações principais">
-            <div class="fact"><div class="fact-label">Formação</div><div class="fact-value">Ciência da Computação<br>UFOP</div></div>
-            <div class="fact"><div class="fact-label">Interesses</div><div class="fact-value">IA aplicada · Otimização · Logística</div></div>
-            <div class="fact"><div class="fact-label">Localização</div><div class="fact-value">Ouro Preto, Minas Gerais</div></div>
-            <div class="fact"><div class="fact-label">Conclusão prevista</div><div class="fact-value">Dezembro de 2028</div></div>
-          </aside>
+        </div>
+        <div class="hero-art" aria-label="Símbolo da marca Mateus Heleno com traçado geométrico alusivo a rotas e conexões">
+          <svg class="network" viewBox="0 0 520 540" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+            <path d="M20 410 L112 355 L162 394 L276 285 L366 305 L490 200" fill="none" stroke="#777d82" stroke-width="1.5" stroke-dasharray="5 9"/>
+            <path d="M70 80 L184 145 L296 112 L434 175" fill="none" stroke="#454a4f" stroke-width="1.5" />
+            <g fill="#b0b4b8"><circle cx="112" cy="355" r="5"/><circle cx="276" cy="285" r="5"/><circle cx="366" cy="305" r="5"/><circle cx="490" cy="200" r="5"/></g>
+            <g fill="#656a6e"><circle cx="70" cy="80" r="3"/><circle cx="184" cy="145" r="3"/><circle cx="296" cy="112" r="3"/><circle cx="434" cy="175" r="3"/></g>
+          </svg>
+          <img class="hero-symbol" src="mateus-heleno-icone-mh-branco.svg" alt="" width="340" height="250">
+          <span class="hero-caption">Pensar · construir · aprimorar</span>
         </div>
       </div>
     </section>
-    <section id="projetos" class="section">
-      <div class="wrap">
-        <div class="section-head"><h2>Projetos em destaque</h2><span class="section-num">02 / 04</span></div>
-        <div class="project-grid">
-          <article class="project">
-            <div class="project-top"><span class="project-number">PROJETO 01</span><span class="pill">Em andamento</span></div>
-            <h3>Transformação Digital<br>Cener Imóveis</h3>
-            <p>Iniciativas para modernizar processos de uma empresa do setor imobiliário rural, com destaque para um sistema interno de gestão de imóveis, documentos, imagens e informações operacionais.</p>
-            <p>Uso do Claude na concepção e planejamento de soluções e do OpenAI Codex na programação, com minha participação na definição de requisitos, no direcionamento das funcionalidades e na validação das entregas. A frente de presença digital também está em planejamento e evolução.</p>
-            <div class="tag-row"><span class="tag">IA generativa</span><span class="tag">Transformação digital</span><span class="tag">Gestão de processos</span></div>
-            <p class="note">Projeto empresarial interno. Código, dados e acesso ao sistema não são públicos.</p>
+    <section class="intro container" id="sobre" aria-labelledby="sobre-titulo">
+      <div><span class="section-kicker">Sobre mim</span><h2 id="sobre-titulo">Entre a pesquisa e a prática.</h2></div>
+      <div class="intro-copy">
+        <p>Sou graduando em Ciência da Computação pela Universidade Federal de Ouro Preto (UFOP), com formação prevista para dezembro de 2028.</p>
+        <p>Na Cener Imóveis, conduzo iniciativas de transformação digital. Meu trabalho envolve o desenvolvimento de um sistema de gestão e a organização de processos, além do planejamento da presença digital da empresa. Uso Claude para apoiar a concepção das soluções e OpenAI Codex para gerar e modificar o código, enquanto defino requisitos e valido as entregas.</p>
+        <p>Na iniciação científica, estudo metaheurísticas aplicadas ao roteamento de veículos elétricos, com interesse especial em operações e logística. Também curso uma disciplina de pós-graduação na área de otimização.</p>
+        <div class="intro-highlight">Meu foco é entender o problema antes de escolher a tecnologia.</div>
+      </div>
+    </section>
+    <section class="section" id="projetos" aria-labelledby="projetos-titulo">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="section-kicker">Trabalhos selecionados</span><h2 id="projetos-titulo">Projetos</h2></div>
+          <p>Experiências empresariais, pesquisa e projetos autorais.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature feature-primary">
+            <div class="project-meta"><span class="meta-type">Cener Imóveis</span><span class="status">Em andamento</span></div>
+            <h3>Transformação digital de uma empresa real.</h3>
+            <p>Desenvolvimento de um sistema interno para organizar imóveis rurais, documentos, imagens e informações operacionais. Conduzo requisitos, planejamento e validação, com Claude na concepção e Codex na programação.</p>
+            <div class="bottom">
+              <ul class="delivery-list" aria-label="Frentes de trabalho">
+                <li>Software de gestão <span>Desenvolvimento e evolução</span></li>
+                <li>Organização de processos <span>Em andamento</span></li>
+                <li>Presença digital <span>Planejamento</span></li>
+              </ul>
+              <div class="tags"><span class="tag">IA generativa</span><span class="tag">Sistemas web</span><span class="tag">Processos</span></div>
+            </div>
           </article>
-          <article class="project">
-            <div class="project-top"><span class="project-number">PROJETO 02</span><span class="pill">Iniciação científica</span></div>
-            <h3>Otimização de Rotas<br>de Veículos Elétricos</h3>
-            <p>Pesquisa relacionada ao EVRPTW-PR: problema de roteamento de veículos elétricos com janelas de tempo e recarga parcial.</p>
-            <p>Estudo e aplicação de metaheurísticas para buscar soluções de melhor qualidade, respeitando restrições operacionais. Aprofundamento do tema em uma disciplina de pós-graduação relacionada à otimização.</p>
-            <div class="tag-row"><span class="tag">Metaheurísticas</span><span class="tag">Pesquisa operacional</span><span class="tag">Logística</span><span class="tag">C++</span></div>
-            <p class="note">Pesquisa acadêmica na Universidade Federal de Ouro Preto (UFOP).</p>
+          <article class="feature feature-secondary">
+            <div class="project-meta"><span class="meta-type">Iniciação científica · UFOP</span><span class="status">Pesquisa</span></div>
+            <h3>Metaheurísticas para melhores rotas.</h3>
+            <p>Pesquisa sobre o EVRPTW-PR: roteamento de veículos elétricos com janelas de tempo e recarga parcial. Estudo de metaheurísticas para encontrar soluções de melhor qualidade diante de restrições logísticas.</p>
+            <div class="bottom">
+              <div class="route-graphic" role="img" aria-label="Diagrama conceitual de uma rota com pontos de atendimento e conexões">
+                <svg viewBox="0 0 440 104" aria-hidden="true"><path d="M25 75 L105 32 L181 68 L264 23 L350 52 L415 28" fill="none" stroke="#22272b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M181 68 L225 89 L350 52" fill="none" stroke="#9ea5ab" stroke-width="1.5" stroke-dasharray="4 5"/>
+                <g fill="#fff" stroke="#26292d" stroke-width="2"><circle cx="25" cy="75" r="7"/><circle cx="105" cy="32" r="7"/><circle cx="181" cy="68" r="7"/><circle cx="264" cy="23" r="7"/><circle cx="350" cy="52" r="7"/><circle cx="415" cy="28" r="7"/></g><circle cx="225" cy="89" r="6" fill="#aeb3b8"/></svg>
+              </div>
+              <p class="research-note">Ilustração conceitual, não um resultado experimental.</p>
+              <div class="tags"><span class="tag">Otimização</span><span class="tag">Metaheurísticas</span><span class="tag">Logística</span><span class="tag">C++</span></div>
+            </div>
           </article>
-          <article class="project project-compact">
-            <div class="project-top"><span class="project-number">PROJETO 03</span><span class="pill">Projeto autoral · C</span></div>
-            <h3>2048 para Terminal</h3>
-            <p>Desenvolvi integralmente uma versão do jogo 2048 em linguagem C, executada no terminal. Um projeto pessoal para exercitar lógica de programação e resolução de problemas.</p>
-            <div class="tag-row"><span class="tag">C</span><span class="tag">Lógica de programação</span><span class="tag">Terminal</span></div>
-            <a class="project-link" href="https://github.com/MateusHeleno/jogo2048" target="_blank" rel="noopener noreferrer">Ver código no GitHub <span aria-hidden="true">↗</span></a>
-            <p class="note">O jogo roda no terminal, não diretamente no navegador.</p>
+        </div>
+        <div class="small-projects">
+          <article class="small-project">
+            <div>
+              <span class="small-label">Projeto autoral · Linguagem C</span>
+              <h3>2048 no terminal</h3>
+              <p>Jogo desenvolvido integralmente por mim em C, executado no terminal. Exercício prático de lógica, estruturas de dados e interação por texto.</p>
+              <a class="project-link" href="https://github.com/MateusHeleno/jogo2048" target="_blank" rel="noopener noreferrer">Ver código no GitHub</a>
+            </div>
+            <div class="project-stamp" aria-hidden="true">2048</div>
           </article>
-          <article class="project project-compact">
-            <div class="project-top"><span class="project-number">PROJETO 04</span><span class="pill">Projeto autoral · Web</span></div>
-            <h3>H-Links — Agregador de Links</h3>
-            <p>Projeto pessoal de desenvolvimento web para reunir e apresentar diferentes links em um único lugar, com uma interface própria.</p>
-            <div class="tag-row"><span class="tag">Web</span><span class="tag">CSS</span><span class="tag">Interface</span></div>
-            <a class="project-link" href="https://github.com/MateusHeleno/H-Links" target="_blank" rel="noopener noreferrer">Ver projeto no GitHub <span aria-hidden="true">↗</span></a>
-            <p class="note">Repositório público com o código do projeto.</p>
+          <article class="small-project">
+            <div>
+              <span class="small-label">Projeto autoral · Desenvolvimento web</span>
+              <h3>H-Links</h3>
+              <p>Agregador de links desenvolvido para reunir diferentes destinos em uma interface própria e organizada.</p>
+              <a class="project-link" href="https://github.com/MateusHeleno/H-Links" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+            </div>
+            <div class="project-stamp links" aria-hidden="true">H</div>
           </article>
         </div>
       </div>
     </section>
-    <section id="conhecimentos" class="section">
-      <div class="wrap">
-        <div class="section-head"><h2>Conhecimentos & ferramentas</h2><span class="section-num">03 / 04</span></div>
-        <div class="skills">
-          <div class="skill-box"><h3>Programação e desenvolvimento</h3><p>C, C++, Python, Django, HTML, CSS, SQL e PostgreSQL.</p></div>
-          <div class="skill-box"><h3>IA e produtividade</h3><p>Claude, OpenAI Codex, ChatGPT, elaboração de prompts e validação de soluções geradas com IA.</p></div>
-          <div class="skill-box"><h3>Métodos e ferramentas</h3><p>Git, GitHub, GitLab, Linux, testes de software, algoritmos, otimização e metaheurísticas.</p></div>
+    <section class="section" id="conhecimentos" aria-labelledby="conhecimentos-titulo">
+      <div class="container">
+        <div class="section-head"><div><span class="section-kicker">Base técnica</span><h2 id="conhecimentos-titulo">Conhecimentos e ferramentas</h2></div></div>
+        <div class="skills-row">
+          <div class="skill-area"><h3>Desenvolvimento</h3><p>C, C++, Python, Django, HTML, CSS, SQL e PostgreSQL.</p></div>
+          <div class="skill-area"><h3>Inteligência artificial</h3><p>Claude, ChatGPT e OpenAI Codex. Planejamento, direcionamento de agentes de programação e validação de entregas.</p></div>
+          <div class="skill-area"><h3>Métodos e práticas</h3><p>Git, GitHub, GitLab, Linux, testes de software, algoritmos, otimização e metaheurísticas.</p></div>
         </div>
+        <p class="skill-footnote">Ferramentas utilizadas em diferentes níveis de experiência acadêmica e prática.</p>
       </div>
     </section>
-    <section id="contato" class="section">
-      <div class="wrap">
-        <div class="section-head"><h2>Vamos conversar?</h2><span class="section-num">04 / 04</span></div>
-        <div class="contact-panel">
-          <div><h2>Aberto a oportunidades de aprendizado e colaboração.</h2><p>Especialmente em inteligência artificial, desenvolvimento de software, operações e logística.</p></div>
-          <a class="btn" href="mailto:mateusheleno378@gmail.com">Enviar e-mail <span aria-hidden="true">↗</span></a>
-        </div>
+    <section class="container contact" id="contato" aria-labelledby="contato-titulo">
+      <div><span class="section-kicker">Contato</span><h2 id="contato-titulo">Vamos conversar sobre tecnologia?</h2><p>Tenho interesse em oportunidades de estágio, projetos e aprendizado nas áreas de desenvolvimento, inteligência artificial e otimização.</p></div>
+      <div class="contact-right">
+        <img src="mateus-heleno-logo-completa-branca.svg" alt="Mateus Heleno — Desenvolvimento de Software" width="325" height="171">
+        <div class="contact-actions"><a class="button button-light" href="mailto:mateusheleno378@gmail.com">Enviar e-mail</a><a class="button button-darkline" href="https://github.com/MateusHeleno" target="_blank" rel="noopener noreferrer">Meu GitHub</a></div>
       </div>
     </section>
   </main>
-  <footer class="wrap footer">
-    <span>© 2026 Mateus Heleno · Portfólio pessoal</span>
-    <div class="footer-links"><a class="plain-link" href="https://github.com/MateusHeleno" target="_blank" rel="noopener noreferrer">GitHub</a><a class="plain-link" href="https://www.linkedin.com/in/mateus-heleno-aa367b350/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a class="plain-link" href="mailto:mateusheleno378@gmail.com">E-mail</a></div>
+  <footer class="container site-footer">
+    <span>© 2026 Mateus Heleno</span>
+    <div class="footer-links">
+      <a href="https://github.com/MateusHeleno" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/mateus-heleno-aa367b350/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:mateusheleno378@gmail.com">E-mail</a>
+    </div>
   </footer>
 </body>
 </html>
