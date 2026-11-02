@@ -62,7 +62,7 @@
     h1 { max-width: 640px; font-size: clamp(3.1rem, 5.6vw, 5.75rem); line-height: 1.045; letter-spacing: -.065em; font-weight: 700; margin-bottom: 28px; text-wrap: balance; }
     .hero-lead { font-size: clamp(1rem, 1.5vw, 1.13rem); max-width: 500px; line-height: 1.68; color: #c8cbd0; margin-bottom: 34px; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 47px; padding: 11px 19px; border: 1px solid transparent; border-radius: 10px; font-size: .9rem; font-weight: 700; line-height: 1.25; }
+    .button { font-family: inherit; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; min-height: 47px; padding: 11px 19px; border: 1px solid transparent; border-radius: 10px; font-size: .9rem; font-weight: 700; line-height: 1.25; }
     .button-light { background: #fafafa; color: var(--foreground); }
     .button-light:hover { background: #e5e7e9; }
     .button-darkline { border-color: #6a6c70; color: #f2f3f4; }
@@ -123,6 +123,7 @@
     .contact-right { display: flex; flex-direction: column; align-items: center; gap: 32px; }
     .contact-right img { width: min(100%, 325px); height: auto; }
     .contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .copy-feedback { min-height: 1.5em; font-size: .8rem; text-align: center; color: #c5c9cc; }
     .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding: 0 0 36px; font-size: .83rem; color: #60666d; }
     .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
     .footer-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -271,7 +272,8 @@
               <span class="small-label">Projeto autoral · Desenvolvimento web</span>
               <h3>H-Links</h3>
               <p>Agregador de links desenvolvido para reunir diferentes destinos em uma interface própria e organizada.</p>
-              <a class="project-link" href="https://github.com/MateusHeleno/H-Links" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+              <a class="project-link" href="https://github.com/MateusHeleno/H-Links" target="_blank" rel="noopener noreferrer">Ver código do H-Links</a>
+              <!-- Quando o H-Links estiver publicado, adicionar aqui um segundo link para a demonstração online. -->
             </div>
             <div class="project-stamp links" aria-hidden="true">H</div>
           </article>
@@ -293,7 +295,11 @@
       <div><span class="section-kicker">Contato</span><h2 id="contato-titulo">Vamos conversar sobre tecnologia?</h2><p>Tenho interesse em oportunidades de estágio, projetos e aprendizado nas áreas de desenvolvimento, inteligência artificial e otimização.</p></div>
       <div class="contact-right">
         <img src="assets/logos/mateus-heleno-logo-completa-branca.svg" alt="Mateus Heleno — Desenvolvimento de Software" width="325" height="171">
-        <div class="contact-actions"><a class="button button-light" href="mailto:mateusheleno378@gmail.com">Enviar e-mail</a><a class="button button-darkline" href="https://github.com/MateusHeleno" target="_blank" rel="noopener noreferrer">Meu GitHub</a></div>
+        <div class="contact-actions">
+          <a class="button button-light" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mateusheleno378%40gmail.com" target="_blank" rel="noopener noreferrer">Escrever no Gmail</a>
+          <button class="button button-darkline" type="button" id="copy-email">Copiar e-mail</button>
+        </div>
+        <span class="copy-feedback" id="copy-feedback" role="status" aria-live="polite"></span>
       </div>
     </section>
   </main>
@@ -302,8 +308,35 @@
     <div class="footer-links">
       <a href="https://github.com/MateusHeleno" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://www.linkedin.com/in/mateus-heleno-aa367b350/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="mailto:mateusheleno378@gmail.com">E-mail</a>
+      <a href="#contato">E-mail</a>
     </div>
   </footer>
+  <script>
+    const botaoCopiarEmail = document.getElementById('copy-email');
+    const avisoCopiarEmail = document.getElementById('copy-feedback');
+
+    botaoCopiarEmail.addEventListener('click', async () => {
+      const email = 'mateusheleno378@gmail.com';
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          const campo = document.createElement('textarea');
+          campo.value = email;
+          campo.style.position = 'fixed';
+          campo.style.opacity = '0';
+          document.body.appendChild(campo);
+          campo.select();
+          const copiado = document.execCommand('copy');
+          campo.remove();
+          if (!copiado) throw new Error('Cópia não autorizada');
+        }
+        avisoCopiarEmail.textContent = 'E-mail copiado: ' + email;
+        botaoCopiarEmail.textContent = 'Copiado!';
+      } catch {
+        avisoCopiarEmail.textContent = 'Não foi possível copiar. Anote: ' + email;
+      }
+    });
+  </script>
 </body>
 </html>
